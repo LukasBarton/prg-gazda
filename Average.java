@@ -11,7 +11,7 @@ public class Average {
                 sum += sc.nextDouble();
             }
 
-            System.out.println("Average" + (sum / totalCount));
+            System.out.println("Average: " + (sum / totalCount));
 
     }
 }
