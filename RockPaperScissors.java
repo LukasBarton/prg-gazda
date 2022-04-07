@@ -1,35 +1,37 @@
 import java.util.Random;
 import java.util.Scanner;
+
 public class RockPaperScissors {
-        public static void main(String[] args) {
-                int R = 0;
-                int P = 1;
-                int S = 2;
-                int h;
-                int k;
-                Scanner myScan = new Scanner(System.in);
-                Random myRand = new Random();
-                System.out.println("0. Rock");
-                System.out.println("1. Paper");
-                System.out.println("2. Scissors");
+    public static void main(String[] args) {
+        int R = 0;
+        int P = 1;
+        int S = 2;
+        Scanner myScan = new Scanner(System.in);
+        Random myRand = new Random();
+        int hScore = 0;
+        int kScore  = 0;
+        while (true) {
+            System.out.println("0. kamen");
+            System.out.println("1. papir");
+            System.out.println("2. nuzky");
 
-                h = myScan.nextInt();
+            int h = myScan.nextInt();
 
-                k = myRand.nextInt(3);
+            int k = myRand.nextInt(3);
 
-                System.out.println("k = " + k + " h = " + h);
+            if (h == k) {
+                System.out.println("remiza!");
+            } else if (h == R && k == S || h == S && k == P || h == P && k == R) {
+                System.out.println("hrac win!");
+                hScore++;
 
-                if ( h==k )
-                {
-                    System.out.println("Tie Game!");
-                }
-                else if ( (h==R && k==S) || (h==S && k==P) || (h==P && k== R) )
-                {
-                    System.out.println("User Wins!");
-                }
-                else
-                {
-                    System.out.println("Computer Wins!");
+            } else if (h == S && k == R || h == P && k == S || h == R && k == P) {
+                System.out.println("komp win!");
+                kScore++;
+            }
+
+            System.out.println("h = " + hScore + " k = " + kScore);
+
         }
-        }
+    }
 }
